@@ -868,7 +868,7 @@ a.btn:hover {
 
 .btn-showcase:hover {
   background: linear-gradient(135deg, #1052b4, #89b2e4);
-  transform: translateY(-2px);
+  transform: translateY(-10px);
   color: #fff;
 }
 .logo__wrapper {
