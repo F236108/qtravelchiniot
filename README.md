@@ -26,11 +26,12 @@ Welcome to the official website for **Q Travels International**, a premium trave
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/q-travels-website.git
-##✉️ Contact
+## ✉️ Contact
 For bookings or inquiries:
 
--📞 WhatsApp: +92 3161734963
+- 📞 WhatsApp: +92 3161734963
 
--📧 Email: qtravelchiniot@gmail.com
+- 📧 Email: qtravelchiniot@gmail.com
 
--📍 Location: Yasir Plaza, Chiniot, Pakistan
+- 📍 Location: Yasir Plaza, Chiniot, Pakistan
+
