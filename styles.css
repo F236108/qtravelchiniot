@@ -853,7 +853,7 @@ a.btn:hover {
 }
 
 .btn-showcase {
-  background: linear-gradient(135deg, #6da0df, #1d60c4);
+  background: linear-gradient(135deg, #2887ff, #356bbb);
   color: white;
   padding: 1rem 2rem;
   border-radius: 3rem;
@@ -861,16 +861,34 @@ a.btn:hover {
   font-size: 1.1rem;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   transition: background 0.3s ease, transform 0.2s;
+  text-align: center;
+  width: auto;
+  max-width: 100%;
 }
 
 .btn-showcase:hover {
-  background: linear-gradient(135deg, #1052b4, #89b2e4);
-  transform: translateY(-5px);
+  background: linear-gradient(135deg, #1052b4, #62a0ec);
+  transform: translateY(-2px);
   color: #fff;
 }
+
+@media (max-width: 480px) {
+  .btn-showcase {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .showcase__btn {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .logo__wrapper {
   display: flex;
   align-items: center;
