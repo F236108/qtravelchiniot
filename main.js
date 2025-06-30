@@ -70,10 +70,26 @@ ScrollReveal().reveal(".discover__card", {
 });
 
 const swiper = new Swiper(".swiper", {
-  slidesPerView: 3,
-  spaceBetween: 20,
+  slidesPerView: 3,        // Show 3 cards
+  spaceBetween: 30,        // Spacing between cards
   loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    640: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
 });
+
 const form = document.getElementById("bookingForm");
 const successMessage = document.getElementById("successMessage");
 
