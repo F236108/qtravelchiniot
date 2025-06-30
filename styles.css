@@ -21,6 +21,27 @@
   margin: auto;
   padding: 5rem 1rem;
 }
+.section__badge {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.9rem;
+  border-radius: 1rem;
+  margin: 0 auto 1rem auto;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.section__description {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--primary-color);
+  text-align: center;
+  line-height: 1.6;
+  word-break: break-word;
+}
 
 .section__header {
   margin-bottom: 5px;
