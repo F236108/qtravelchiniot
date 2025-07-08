@@ -943,3 +943,20 @@ a.btn:hover {
   margin-top: 2px;
 }
 
+.header__image img {
+  animation: none; /* Disable any existing animations */
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0px); }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .header__image img {
+    animation: float 6s ease-in-out infinite !important;
+  }
+}
+
