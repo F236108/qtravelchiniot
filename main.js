@@ -118,21 +118,3 @@ form.addEventListener("submit", function (e) {
       console.error(error);
     });
 });
-document.addEventListener('DOMContentLoaded', function() {
-  const headerImage = document.querySelector('.header__image img');
-  
-  // Slide in from right to left
-  headerImage.style.transform = 'translateX(100%)';
-  headerImage.style.opacity = '0';
-  
-  setTimeout(() => {
-    headerImage.style.transition = 'transform 0.8s ease-out, opacity 0.8s ease-out';
-    headerImage.style.transform = 'translateX(0)';
-    headerImage.style.opacity = '1';
-    
-    // Start floating animation after slide-in completes
-    setTimeout(() => {
-      headerImage.style.animation = 'float 6s ease-in-out infinite';
-    }, 800);
-  }, 100);
-});
