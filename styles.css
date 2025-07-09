@@ -255,6 +255,25 @@ header::before {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
+.destination__card {
+  overflow: hidden;
+  border-radius: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.destination__card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+.destination__card img {
+  transition: transform 0.3s ease;
+}
+
+.destination__card:hover img {
+  transform: scale(1.1);
+}
+
 .destination__card__details {
   padding: 1rem;
   display: flex;
