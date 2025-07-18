@@ -972,10 +972,44 @@ a.btn:hover {
   100% { transform: translateY(0px); }
 }
 
-/* For mobile devices */
 @media (max-width: 768px) {
+  .header__container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+    padding: 0;
+    gap: 0;
+  }
+
+  .header__image {
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    border-radius: 0 0 2rem 2rem;
+  }
+
   .header__image img {
-    animation: float 6s ease-in-out infinite !important;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+    transform: scale(1.3); /* Zoom in */
+    max-width: none;
+    display: block;
+  }
+
+  .header__content {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .header__btns {
+    margin-top: 1rem;
+  }
+
+  header {
+    background-color: var(--white);
   }
 }
 
