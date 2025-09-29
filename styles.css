@@ -732,10 +732,12 @@ footer {
   }
 
   .header__container {
-    grid-template-columns:
-      minmax(0, 1fr)
-      repeat(5, minmax(0, calc(var(--max-width) / 5)))
-      minmax(0, 1fr);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;   /* <-- This is making it full screen */
+    padding: 0;
+    gap: 0;
   }
 
   .header__content {
@@ -1012,5 +1014,6 @@ a.btn:hover {
     background-color: var(--white);
   }
 }
+
 
 
