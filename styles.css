@@ -735,9 +735,13 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    min-height: 100vh;   /* <-- This is making it full screen */
-    padding: 0;
-    gap: 0;
+    min-height: 65vh;   /* 🔹 reduced height (was 100vh) */
+    padding: 1rem 0;    /* small padding for spacing */
+  }
+
+  .header__image {
+    height: 25vh;       /* smaller image portion */
+    overflow: hidden;
   }
 
   .header__content {
@@ -751,13 +755,6 @@ footer {
 
   .header__btns {
     justify-content: flex-start;
-  }
-
-  .header__image {
-    grid-column: 4/8;
-    position: relative;
-    isolation: isolate;
-    height: 100%;
   }
 
   .header__image img {
@@ -1014,6 +1011,7 @@ a.btn:hover {
     background-color: var(--white);
   }
 }
+
 
 
 
