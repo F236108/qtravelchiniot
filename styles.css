@@ -200,7 +200,7 @@ header::before {
 
 .header__content p {
   margin-bottom: 5px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-dark);
   text-align: center;
@@ -208,7 +208,7 @@ header::before {
 
 .header__content h1 {
   margin-bottom: 2rem;
-  font-size: 4.5rem;
+  font-size: 3rem;
   font-weight: 600;
   color: var(--text-dark);
   line-height: 5.5rem;
@@ -1012,4 +1012,5 @@ a.btn:hover {
     background-color: var(--white);
   }
 }
+
 
