@@ -4,9 +4,7 @@ Welcome to the official website for **Q Travels International**, a premium trave
 
 ---
 ## Demo link
-```bash 
-https://f236108.github.io/qtravelchiniot/
----
+
 ## 🌟 Features
 
 - 🕋 **Popular Umrah Packages** with Economy, Standard, and VIP options
