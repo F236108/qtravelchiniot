@@ -220,10 +220,11 @@ header::before {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  height: 60px;
 }
 
 .header__btns .btn {
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
 }
 
 .header__btns a {
@@ -1085,3 +1086,91 @@ a.btn:hover {
 
 
 
+.payment-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.payment-box {
+  background: #fff;
+  width: 460px;
+  border-radius: 22px;
+  padding: 22px;
+}
+
+.payment-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payment-top h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.close-btn {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.payment-card {
+  border: 2px solid #eee;
+  border-radius: 14px;
+  padding: 14px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.payment-card img {
+  width: 36px;
+  margin-bottom: 8px;
+}
+
+.payment-card span {
+  font-size: 12px;
+}
+
+.payment-card.active {
+  border-color: #3b82f6;
+}
+
+.payment-details {
+  background: #f9fafb;
+  padding: 14px;
+  border-radius: 14px;
+}
+
+.account-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.account-row button {
+  background: #e5e7eb;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .payment-box {
+    width: 95%;
+  }
+}
