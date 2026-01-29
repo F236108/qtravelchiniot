@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -110,12 +110,60 @@
           <div class="header__btns">
             <a href="#book-now" class="btn">Book A Trip Now</a>
           </div>
+
+          <div class="header__btns">
+            <button class="btn" onclick="openPayment()">Pay Now</button>
+          </div>
         </div>
         <div class="header__image">
           <img src="assets/headers.png" alt="header" />
         </div>
       </div>
     </header>
+
+    <div class="payment-overlay" id="paymentPopup">
+      <div class="payment-box">
+        <div class="payment-top">
+          <h3>Payment Methods</h3>
+          <span class="close-btn" onclick="closePayment()">×</span>
+        </div>
+
+        <div class="payment-grid">
+          <div class="payment-card active" data-account="304181113">
+            <img src="assets/ubl.png" />
+            <span>UBL</span>
+          </div>
+
+          <div class="payment-card" data-account="03407273466">
+            <img src="assets/nayapay.png" />
+            <span>NAYAPAY</span>
+          </div>
+
+          <div class="payment-card" data-account="03161734963">
+            <img src="assets/jazzcash.png" />
+            <span>JAZZCASH</span>
+          </div>
+
+          <div class="payment-card" data-account="03161734963">
+            <img src="assets/easypaisa.png" />
+            <span>EASYPAISA</span>
+          </div>
+
+          <div class="payment-card" data-account="06807900447503">
+            <img src="assets/habib.png" />
+            <span>HABIB BANK</span>
+          </div>
+        </div>
+
+        <div class="payment-details">
+          <strong>MOHAMMAD UMAIR</strong>
+          <div class="account-row">
+            <span id="accountNumber">304181113</span>
+            <button onclick="copyAccount()">📋</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <section class="section__container destination__container" id="package">
       <h2 class="section__header">Popular Umrah Packages & Destination</h2>
@@ -597,7 +645,9 @@
         action="https://formspree.io/f/xeokvrrr"
         method="POST"
         style="max-width: 600px; margin: auto; display: grid; gap: 1rem"
-        onsubmit="document.getElementById('successMessage').style.display = 'block';"
+        onsubmit="
+          document.getElementById('successMessage').style.display = 'block'
+        "
       >
         <input type="text" name="name" placeholder="Full Name" required />
         <input
@@ -756,9 +806,3 @@
     <script src="main.js"></script>
   </body>
 </html>
-
-
-
-
-
-
