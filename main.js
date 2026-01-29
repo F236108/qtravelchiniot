@@ -70,8 +70,8 @@ ScrollReveal().reveal(".discover__card", {
 });
 
 const swiper = new Swiper(".swiper", {
-  slidesPerView: 3,        // Show 3 cards
-  spaceBetween: 30,        // Spacing between cards
+  slidesPerView: 3,
+  spaceBetween: 30,
   loop: true,
   autoplay: {
     delay: 3000,
@@ -90,31 +90,104 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
-const form = document.getElementById("bookingForm");
+// Payment functionality
+function openPayment() {
+  document.getElementById("paymentPopup").style.display = "flex";
+}
+
+function closePayment() {
+  document.getElementById("paymentPopup").style.display = "none";
+}
+
+function copyAccount() {
+  const accountNumber = document.getElementById("accountNumber").innerText;
+  navigator.clipboard.writeText(accountNumber)
+    .then(() => {
+      // Show feedback
+      const copyBtn = document.querySelector('.account-row button');
+      const originalText = copyBtn.innerHTML;
+      copyBtn.innerHTML = "✓ Copied!";
+      copyBtn.style.background = "#10b981";
+      copyBtn.style.color = "white";
+      
+      setTimeout(() => {
+        copyBtn.innerHTML = originalText;
+        copyBtn.style.background = "#e5e7eb";
+        copyBtn.style.color = "black";
+      }, 2000);
+    })
+    .catch(err => {
+      console.error('Failed to copy: ', err);
+      alert("Failed to copy account number. Please copy manually.");
+    });
+}
+
+// Initialize payment cards functionality
+document.addEventListener("DOMContentLoaded", function() {
+  const paymentCards = document.querySelectorAll(".payment-card");
+  const accountNumberElement = document.getElementById("accountNumber");
+  
+  // Add click event to each payment card
+  paymentCards.forEach(card => {
+    card.addEventListener("click", function() {
+      // Remove active class from all cards
+      paymentCards.forEach(c => c.classList.remove("active"));
+      
+      // Add active class to clicked card
+      this.classList.add("active");
+      
+      // Get the account number from data-account attribute
+      const accountNumber = this.getAttribute("data-account");
+      
+      // Update the displayed account number
+      accountNumberElement.textContent = accountNumber;
+    });
+  });
+  
+  // Close payment popup when clicking outside
+  const paymentOverlay = document.getElementById("paymentPopup");
+  paymentOverlay.addEventListener("click", function(e) {
+    if (e.target === this) {
+      closePayment();
+    }
+  });
+  
+  // Close with Escape key
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape" && paymentOverlay.style.display === "flex") {
+      closePayment();
+    }
+  });
+});
+
+// Form submission (keeping your existing form code)
+const form = document.querySelector("#book-now form");
 const successMessage = document.getElementById("successMessage");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault(); // prevent immediate submission
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  const formData = new FormData(form);
+    const formData = new FormData(form);
 
-  fetch(form.action, {
-    method: "POST",
-    body: formData,
-    headers: {
-      Accept: "application/json",
-    },
-  })
-    .then((response) => {
-      if (response.ok) {
-        form.reset();
-        successMessage.style.display = "block";
-      } else {
-        alert("Something went wrong. Please try again.");
-      }
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
     })
-    .catch((error) => {
-      alert("Error submitting form.");
-      console.error(error);
-    });
-});
+      .then((response) => {
+        if (response.ok) {
+          form.reset();
+          successMessage.style.display = "block";
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      })
+      .catch((error) => {
+        alert("Error submitting form.");
+        console.error(error);
+      });
+  });
+}
