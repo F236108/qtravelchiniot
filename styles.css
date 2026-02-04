@@ -1136,7 +1136,7 @@ a.btn:hover {
 }
 
 .payment-card img {
-  width: 36px;
+  width: px;
   margin-bottom: 8px;
 }
 
@@ -1174,3 +1174,4 @@ a.btn:hover {
     width: 95%;
   }
 }
+
