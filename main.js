@@ -1,3 +1,11 @@
+window.addEventListener("load", () => {
+  // Add a slight delay to show off the premium skeleton effect
+  setTimeout(() => {
+    document.body.classList.add("loaded");
+    document.body.classList.remove("loading");
+  }, 1500); // 1.5 seconds delay for aesthetic effect
+});
+
 const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
 const menuBtnIcon = menuBtn.querySelector("i");
@@ -101,59 +109,60 @@ function closePayment() {
 
 function copyAccount() {
   const accountNumber = document.getElementById("accountNumber").innerText;
-  navigator.clipboard.writeText(accountNumber)
+  navigator.clipboard
+    .writeText(accountNumber)
     .then(() => {
       // Show feedback
-      const copyBtn = document.querySelector('.account-row button');
+      const copyBtn = document.querySelector(".account-row button");
       const originalText = copyBtn.innerHTML;
       copyBtn.innerHTML = "✓ Copied!";
       copyBtn.style.background = "#10b981";
       copyBtn.style.color = "white";
-      
+
       setTimeout(() => {
         copyBtn.innerHTML = originalText;
         copyBtn.style.background = "#e5e7eb";
         copyBtn.style.color = "black";
       }, 2000);
     })
-    .catch(err => {
-      console.error('Failed to copy: ', err);
+    .catch((err) => {
+      console.error("Failed to copy: ", err);
       alert("Failed to copy account number. Please copy manually.");
     });
 }
 
 // Initialize payment cards functionality
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const paymentCards = document.querySelectorAll(".payment-card");
   const accountNumberElement = document.getElementById("accountNumber");
-  
+
   // Add click event to each payment card
-  paymentCards.forEach(card => {
-    card.addEventListener("click", function() {
+  paymentCards.forEach((card) => {
+    card.addEventListener("click", function () {
       // Remove active class from all cards
-      paymentCards.forEach(c => c.classList.remove("active"));
-      
+      paymentCards.forEach((c) => c.classList.remove("active"));
+
       // Add active class to clicked card
       this.classList.add("active");
-      
+
       // Get the account number from data-account attribute
       const accountNumber = this.getAttribute("data-account");
-      
+
       // Update the displayed account number
       accountNumberElement.textContent = accountNumber;
     });
   });
-  
+
   // Close payment popup when clicking outside
   const paymentOverlay = document.getElementById("paymentPopup");
-  paymentOverlay.addEventListener("click", function(e) {
+  paymentOverlay.addEventListener("click", function (e) {
     if (e.target === this) {
       closePayment();
     }
   });
-  
+
   // Close with Escape key
-  document.addEventListener("keydown", function(e) {
+  document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && paymentOverlay.style.display === "flex") {
       closePayment();
     }

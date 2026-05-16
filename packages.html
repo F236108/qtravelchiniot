@@ -16,8 +16,15 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Travel Packages | Q Travel International</title>
   </head>
-  <body>
-    <nav>
+  <body class="loading">
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="loader"></div>
+      <p>Q TRAVELS INTERNATIONAL</p>
+    </div>
+
+    <div class="content-hidden">
+      <nav>
       <div class="nav__header">
         <div class="nav__logo">
           <a href="index.html" class="logo__wrapper">
@@ -96,6 +103,40 @@
         Choose from our most requested Umrah experiences designed to meet your
         spiritual needs.
       </p>
+      <!-- Skeleton Container (Shown while loading) -->
+      <div class="destination__grid skeleton-container">
+        <div class="skeleton-destination-card">
+          <div class="skeleton-image skeleton"></div>
+          <div class="skeleton-details">
+            <div class="skeleton-details-left">
+              <div class="skeleton-text skeleton" style="width: 70%"></div>
+              <div class="skeleton-text skeleton" style="width: 100%"></div>
+            </div>
+            <div class="skeleton-rating skeleton"></div>
+          </div>
+        </div>
+        <div class="skeleton-destination-card">
+          <div class="skeleton-image skeleton"></div>
+          <div class="skeleton-details">
+            <div class="skeleton-details-left">
+              <div class="skeleton-text skeleton" style="width: 70%"></div>
+              <div class="skeleton-text skeleton" style="width: 100%"></div>
+            </div>
+            <div class="skeleton-rating skeleton"></div>
+          </div>
+        </div>
+        <div class="skeleton-destination-card">
+          <div class="skeleton-image skeleton"></div>
+          <div class="skeleton-details">
+            <div class="skeleton-details-left">
+              <div class="skeleton-text skeleton" style="width: 70%"></div>
+              <div class="skeleton-text skeleton" style="width: 100%"></div>
+            </div>
+            <div class="skeleton-rating skeleton"></div>
+          </div>
+        </div>
+      </div>
+
       <div class="destination__grid">
         <div class="destination__card">
           <img src="assets/Umrah.webp" alt="destination" />
@@ -349,6 +390,7 @@
         Developed by ZAIN ABBAS
       </div>
     </footer>
+    </div>
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
