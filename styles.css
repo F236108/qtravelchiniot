@@ -1357,14 +1357,43 @@ a.btn:hover {
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.loader {
-  width: 50px;
-  height: 50px;
-  border: 5px solid var(--extra-light);
-  border-top: 5px solid var(--primary-color);
+.loader-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 2rem;
+}
+
+.loader-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--extra-light);
+  border-top: 3px solid var(--primary-color);
   border-radius: 50%;
   animation: spin 1s linear infinite;
-  margin-bottom: 1rem;
+}
+
+.loader-plane {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  animation: plane-takeoff 2s ease-in-out infinite;
+}
+
+@keyframes plane-takeoff {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2) rotate(-15deg) translateY(-10px);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
 }
 
 @keyframes spin {
@@ -1373,9 +1402,17 @@ a.btn:hover {
 }
 
 #preloader p {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--primary-color);
-  letter-spacing: 1px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
 }
 
 body.loaded #preloader {
