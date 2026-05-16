@@ -354,7 +354,7 @@ header::before {
   transition: 0.3s;
 }
 
-.journey__card:hover {
+.journey__card:hover .journey__card__content {
   top: 0;
 }
 
@@ -990,17 +990,22 @@ a.btn:hover {
 
   .header__image {
     width: 100%;
-    height: 40vh; /* Slightly smaller height for image */
+    height: auto;
+    max-height: 250px;
     overflow: hidden;
     border-radius: 0 0 1.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
   }
 
   .header__image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center; /* Center the image */
-    transform: scale(1.1); /* Less aggressive zoom */
+    height: auto;
+    max-height: 250px;
+    object-fit: contain; /* Fit the airplane perfectly */
+    object-position: center;
     display: block;
   }
 
@@ -1032,7 +1037,7 @@ a.btn:hover {
   }
 
   header {
-    background-color: var(--white);
+    background-color: transparent;
     margin-top: 4rem; /* Adjusted for mobile nav */
   }
 }
