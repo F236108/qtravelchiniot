@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Contact Us | Q Travel International</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="index.html" class="logo__wrapper">
+            <img src="assets/logo.png" alt="Q Logo" class="logo__icon" />
+            <div class="logo__title">
+              <div class="logo__travel">TRAVEL</div>
+              <div class="logo__international">INTERNATIONAL</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li>
+          <a href="index.html">
+            <span
+              ><i class="ri-home-4-fill" style="font-size: 1.5rem"></i
+            ></span>
+            HOME
+          </a>
+        </li>
+        <li>
+          <a href="about.html">
+            <span
+              ><i class="ri-information-line" style="font-size: 1.5rem"></i
+            ></span>
+            ABOUT
+          </a>
+        </li>
+        <li>
+          <a href="tour.html">
+            <span
+              ><i class="ri-flight-takeoff-line" style="font-size: 1.5rem"></i
+            ></span>
+            TOUR
+          </a>
+        </li>
+        <li>
+          <a href="packages.html">
+            <span
+              ><i class="ri-red-packet-fill" style="font-size: 1.5rem"></i
+            ></span>
+            PACKAGE
+          </a>
+        </li>
+        <li>
+          <a href="contact.html">
+            <span
+              ><i class="ri-contacts-fill" style="font-size: 1.5rem"></i
+            ></span>
+            CONTACT
+          </a>
+        </li>
+        <li><a href="#book-now">BOOK NOW</a></li>
+      </ul>
+      <div class="nav__btns">
+        <a href="#book-now" class="btn">BOOK TRIP</a>
+      </div>
+    </nav>
+
+    <header class="page__header" id="home">
+      <div class="header__container">
+        <div class="header__content">
+          <p>GET IN TOUCH</p>
+          <h1>We are Here to Assist You 24/7</h1>
+        </div>
+      </div>
+    </header>
+
+    <section class="section__container">
+      <div class="discover__grid">
+        <div class="discover__card">
+          <span><i class="ri-phone-fill"></i></span>
+          <h4>Call Us</h4>
+          <p>+92 3161734963</p>
+          <p>+92 476335050</p>
+        </div>
+        <div class="discover__card">
+          <span><i class="ri-mail-line"></i></span>
+          <h4>Email Us</h4>
+          <p>qtravelchiniot@gmail.com</p>
+        </div>
+        <div class="discover__card">
+          <span><i class="ri-map-pin-2-fill"></i></span>
+          <h4>Visit Us</h4>
+          <p>102/JB Burj Mandi tehsil chak jhumra district faisalabad</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container" id="book-now">
+      <h2 class="section__header">Book Your Trip</h2>
+      <p class="section__description">
+        Fill out the form below and our team will get back to you shortly.
+      </p>
+      <form
+        action="https://formspree.io/f/xeokvrrr"
+        method="POST"
+        style="max-width: 600px; margin: 4rem auto auto; display: grid; gap: 1rem"
+      >
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input
+          type="text"
+          name="cnic"
+          placeholder="CNIC Number (e.g., 35201-xxxxxxx-x)"
+          required
+        />
+        <input
+          type="text"
+          name="passport"
+          placeholder="Passport Number"
+          required
+        />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="tel" name="phone" placeholder="Phone Number" required />
+        <input
+          type="date"
+          name="preferred_date"
+          placeholder="Preferred Departure Date"
+          required
+        />
+        <textarea
+          name="notes"
+          rows="4"
+          placeholder="Any special request? (Optional)"
+        ></textarea>
+        <button class="btn" type="submit">Submit Booking Request</button>
+      </form>
+      <p
+        id="successMessage"
+        style="display: none; margin-top: 1rem; color: green; font-weight: 600; text-align: center;"
+      >
+        ✅ Thank you! Your booking request has been submitted.
+      </p>
+    </section>
+
+    <div class="payment-overlay" id="paymentPopup">
+      <div class="payment-box">
+        <div class="payment-top">
+          <h3>Payment Methods</h3>
+          <span class="close-btn" onclick="closePayment()">×</span>
+        </div>
+
+        <div class="payment-grid">
+          <div class="payment-card active" data-account="304181113">
+            <img src="assets/ubl.png" />
+            <span>UBL</span>
+          </div>
+
+          <div class="payment-card" data-account="03407273466">
+            <img src="assets/nayapay.png" />
+            <span>NAYAPAY</span>
+          </div>
+
+          <div class="payment-card" data-account="03161734963">
+            <img src="assets/jazzcash.png" />
+            <span>JAZZCASH</span>
+          </div>
+
+          <div class="payment-card" data-account="03161734963">
+            <img src="assets/easypaisa.png" />
+            <span>EASYPAISA</span>
+          </div>
+
+          <div class="payment-card" data-account="06807900447503">
+            <img src="assets/habib.png" />
+            <span>HABIB BANK</span>
+          </div>
+        </div>
+
+        <div class="payment-details">
+          <strong>MOHAMMAD UMAIR</strong>
+          <div class="account-row">
+            <span id="accountNumber">304181113</span>
+            <button onclick="copyAccount()">📋</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="contact">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="footer__logo logo__wrapper">
+            <img src="assets/logo.png" alt="Q Logo" class="logo__icon" />
+            <div class="logo__title">
+              <div class="logo__travel">TRAVEL</div>
+              <div class="logo__international">INTERNATIONAL</div>
+            </div>
+          </div>
+
+          <p>
+            Explore the world with ease and excitement through our comprehensive
+            travel platform. Your journey begins here, where seamless planning
+            meets unforgettable experiences.
+          </p>
+          <ul class="footer__socials">
+            <li>
+              <a
+                href="https://www.facebook.com/share/1CN7edg694/?mibextid=qi2Omg"
+                target="_blank"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/q_travel_international?igsh=bm8wejE0ZXE1Znd0"
+                target="_blank"
+              >
+                <i class="ri-instagram-line"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://maps.app.goo.gl/kifCpVxRKfQ1DWkTA"
+                target="_blank"
+              >
+                <i class="ri-map-pin-line"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/923161734963?text=Hi%20Q%20Travel%20International!%20I%20want%20to%20book%20my%20Umrah%20package."
+                class="whatsapp-btn"
+                target="_blank"
+              >
+                <i class="ri-whatsapp-line"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tour.html">Tours</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>
+            <span><i class="ri-contacts-fill"></i></span> Contact Us
+          </h4>
+          <ul class="footer__links">
+            <li>
+              <a href="#">
+                <span><i class="ri-phone-fill"></i></span> +92 3161734963
+              </a>
+              <a href="#">
+                <span><i class="ri-customer-service-2-line"></i></span>
+                +92476335050
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/923161734963?text=Hi%20Q%20Travel%20International!%20I%20want%20to%20book%20my%20Umrah%20package."
+                class="whatsapp-btn"
+                target="_blank"
+              >
+                <i class="ri-whatsapp-line"></i> WhatsApp
+              </a>
+            </li>
+            <li>
+              <a href="mailto:qtravelchiniot@gmail.com">
+                <span><i class="ri-mail-line"></i></span>
+                qtravelchiniot@gmail.com
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://maps.app.goo.gl/pwvjeJrgoAA8guTG9"
+                target="_blank"
+              >
+                <span><i class="ri-map-pin-2-fill"></i></span> 102/JB Burj Mandi
+                tehsil chak jhumra district faisalabad
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Subscribe</h4>
+          <form action="/">
+            <input type="text" placeholder="Enter your email" />
+            <button class="btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2025 Q Travels International-Chiniot. All rights reserved.
+        Developed by ZAIN ABBAS
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
